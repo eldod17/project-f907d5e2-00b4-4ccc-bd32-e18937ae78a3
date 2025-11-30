@@ -23,39 +23,48 @@ const Navbar = () => {
   ];
 
   return (
-    <nav
-      className={`fixed top-0 right-0 left-0 z-50 transition-smooth ${
-        isScrolled
-          ? "bg-card/95 backdrop-blur-md shadow-soft"
-          : "bg-transparent"
-      }`}
-    >
+    <nav className="fixed top-0 right-0 left-0 z-50 transition-smooth">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className={`flex items-center justify-between h-20 px-6 rounded-b-3xl transition-all duration-300 ${
+          isScrolled
+            ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-secondary/20"
+            : "bg-white/80 backdrop-blur-md border-b border-secondary/20"
+        }`}>
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-2">
-            <span className="text-2xl font-bold text-primary">أ.</span>
-            <span className="text-xl font-bold text-foreground">معلم العربية</span>
+          <a href="#home" className="flex items-center gap-3 group">
+            <span className="text-3xl font-bold text-secondary group-hover:scale-110 transition-transform">🐎</span>
+            <span className="text-2xl font-bold text-foreground group-hover:text-secondary transition-smooth">منصة الفارس</span>
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
+          <div className="hidden md:flex items-center gap-12">
+            {navLinks.map((link, index) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-foreground/80 hover:text-primary font-medium transition-smooth relative group"
+                className={`text-foreground font-medium transition-smooth relative group ${
+                  index === 0 ? "text-secondary" : "hover:text-secondary"
+                }`}
               >
                 {link.label}
-                <span className="absolute -bottom-1 right-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full" />
+                <span className={`absolute -bottom-2 right-0 h-1 bg-secondary transition-all duration-300 ${
+                  index === 0 ? "w-full" : "w-0 group-hover:w-full"
+                }`} />
               </a>
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <Button variant="gold" size="default">
-              احجز حصتك الآن
+          {/* CTA Buttons */}
+          <div className="hidden md:flex items-center gap-4">
+            <button className="text-foreground font-medium hover:text-secondary transition-smooth">
+              تسجيل الدخول
+            </button>
+            <Button 
+              variant="outline" 
+              size="default"
+              className="border-2 border-secondary text-secondary hover:bg-secondary hover:text-white rounded-lg px-6"
+            >
+              إنشاء حساب
             </Button>
           </div>
 
@@ -70,20 +79,29 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-card rounded-2xl mt-2 p-4 shadow-card animate-fade-up">
+          <div className="md:hidden bg-white/95 backdrop-blur-md rounded-b-3xl p-4 shadow-lg animate-fade-up">
             {navLinks.map((link, index) => (
               <a
                 key={link.href}
                 href={link.href}
-                className={`block py-3 px-4 text-foreground/80 hover:text-primary hover:bg-muted rounded-lg font-medium transition-smooth animate-fade-up delay-${(index + 1) * 100}`}
+                className={`block py-3 px-4 text-foreground hover:text-secondary hover:bg-secondary/10 rounded-lg font-medium transition-smooth animate-fade-up`}
+                style={{ animationDelay: `${index * 50}ms` }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.label}
               </a>
             ))}
-            <Button variant="gold" className="w-full mt-4">
-              احجز حصتك الآن
-            </Button>
+            <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-secondary/20">
+              <button className="text-foreground font-medium hover:text-secondary transition-smooth py-2">
+                تسجيل الدخول
+              </button>
+              <Button 
+                variant="outline" 
+                className="border-2 border-secondary text-secondary hover:bg-secondary hover:text-white rounded-lg w-full"
+              >
+                إنشاء حساب
+              </Button>
+            </div>
           </div>
         )}
       </div>

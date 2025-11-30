@@ -34,14 +34,14 @@ const AboutSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <span className="inline-block text-secondary font-semibold mb-4 animate-fade-up">
-            تعرف علينا
+            تعرف على مستر حسن حافظ
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 animate-fade-up delay-100">
-            لماذا تختار <span className="text-gradient-gold">معلم العربية</span>؟
+            لماذا تختار <span className="text-gradient-gold">منصة الفارس</span>؟
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto animate-fade-up delay-200">
             نقدم لك تجربة تعليمية فريدة تجمع بين الأصالة والحداثة، 
-            مع التركيز على احتياجات كل طالب بشكل فردي
+            مع التركيز على احتياجات كل طالب بشكل فردي مع مستر حسن حافظ
           </p>
         </div>
 

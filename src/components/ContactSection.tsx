@@ -84,13 +84,13 @@ const ContactSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <span className="inline-block text-secondary font-semibold mb-4 animate-fade-up">
-            تواصل معنا
+            تواصل مع منصة الفارس
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 animate-fade-up delay-100">
-            ابدأ رحلتك <span className="text-gradient-gold">التعليمية الآن</span>
+            ابدأ رحلتك <span className="text-gradient-gold">التعليمية مع مستر حسن حافظ</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto animate-fade-up delay-200">
-            لا تتردد في التواصل معنا للاستفسار عن الدورات أو حجز جلسة تعريفية مجانية
+            لا تتردد في التواصل معنا للاستفسار عن دورات منصة الفارس أو حجز جلسة تعريفية مجانية مع مستر حسن حافظ
           </p>
         </div>
 

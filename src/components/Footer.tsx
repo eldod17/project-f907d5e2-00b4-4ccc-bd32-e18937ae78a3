@@ -26,12 +26,12 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-6">
-              <span className="text-3xl font-bold text-secondary">أ.</span>
-              <span className="text-2xl font-bold">معلم العربية</span>
+              <span className="text-3xl font-bold text-secondary">🐎</span>
+              <span className="text-2xl font-bold">منصة الفارس</span>
             </div>
             <p className="text-primary-foreground/70 leading-relaxed mb-6 max-w-md">
-              منصة تعليمية متخصصة في تعليم اللغة العربية لجميع المستويات والأعمار،
-              نقدم تجربة تعليمية فريدة تجمع بين الأصالة والحداثة.
+              من��ة الفارس التعليمية متخصصة في تعليم اللغة العربية لجميع المستويات والأعمار،
+              نقدم تجربة تعليمية فريدة تجمع بين الأصالة والحداثة مع مستر حسن حافظ.
             </p>
             {/* Social Links */}
             <div className="flex items-center gap-4">
@@ -79,12 +79,12 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="py-6 border-t border-primary-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-primary-foreground/60 text-sm">
-            © {currentYear} معلم العربية. جميع الحقوق محفوظة.
+            © {currentYear} منصة الفارس. جميع الحقوق محفوظة.
           </p>
           <p className="text-primary-foreground/60 text-sm flex items-center gap-1">
             صُنع بـ
             <Heart className="w-4 h-4 text-secondary fill-secondary" />
-            لنشر اللغة العربية
+            لنشر اللغة العربية مع مستر حسن حافظ
           </p>
         </div>
       </div>

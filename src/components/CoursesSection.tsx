@@ -1,11 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Clock, Users, Star, ArrowLeft, BookOpen, Pen, MessageSquare, FileText } from "lucide-react";
+import courseImage from "@/assets/course.png";
 
 const CoursesSection = () => {
   const courses = [
     {
       icon: BookOpen,
       title: "أساسيات اللغة العربية",
+      subtitle: "كورس مجاني!",
       level: "مبتدئ",
       levelColor: "bg-green-100 text-green-700",
       description: "تعلم القراءة والكتابة وأساسيات النحو والصرف للمبتدئين",
@@ -17,6 +19,7 @@ const CoursesSection = () => {
     {
       icon: Pen,
       title: "النحو والصرف المتقدم",
+      subtitle: "كورس مجاني!",
       level: "متقدم",
       levelColor: "bg-blue-100 text-blue-700",
       description: "إتقان قواعد النحو والصرف مع تمارين تطبيقية متنوعة",
@@ -29,6 +32,7 @@ const CoursesSection = () => {
     {
       icon: MessageSquare,
       title: "المحادثة والتواصل",
+      subtitle: "كورس مجاني!",
       level: "متوسط",
       levelColor: "bg-yellow-100 text-yellow-700",
       description: "تطوير مهارات المحادثة والتعبير الشفهي بطلاقة",
@@ -40,6 +44,7 @@ const CoursesSection = () => {
     {
       icon: FileText,
       title: "الكتابة الإبداعية",
+      subtitle: "كورس مجاني!",
       level: "متقدم",
       levelColor: "bg-purple-100 text-purple-700",
       description: "فن كتابة المقالات والقصص والشعر بأسلوب أدبي راقي",
@@ -59,85 +64,73 @@ const CoursesSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <span className="inline-block text-secondary font-semibold mb-4 animate-fade-up">
-            دوراتنا التعليمية
+            دورات منصة الفارس التعليمية
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 animate-fade-up delay-100">
             اختر الدورة <span className="text-gradient-gold">المناسبة لك</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto animate-fade-up delay-200">
-            دورات متنوعة تناسب جميع المستويات والأعمار، مصممة بعناية 
+            دورات متنوعة تناسب جميع المستويات والأعمار، مصممة بعناية من قبل مستر حسن حافظ
             لتحقيق أفضل النتائج في أقصر وقت
           </p>
         </div>
 
         {/* Courses Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {courses.map((course, index) => (
             <div
               key={course.title}
-              className={`group bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-hover transition-smooth animate-fade-up ${
-                course.featured ? "ring-2 ring-secondary" : ""
-              }`}
+              className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-smooth animate-fade-up flex flex-col"
               style={{ animationDelay: `${(index + 3) * 100}ms` }}
             >
-              {course.featured && (
-                <div className="bg-gradient-gold text-primary-foreground text-center py-2 text-sm font-semibold">
-                  الأكثر طلباً
-                </div>
-              )}
+              {/* Course Image - Top */}
+              <div className="relative h-64 overflow-hidden bg-gradient-to-br from-secondary to-primary">
+                <img
+                  src={courseImage}
+                  alt={course.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
 
-              <div className="p-6">
-                {/* Icon & Level */}
-                <div className="flex items-center justify-between mb-4">
-                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-smooth">
-                    <course.icon className="w-7 h-7 text-primary" />
-                  </div>
-                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${course.levelColor}`}>
-                    {course.level}
-                  </span>
-                </div>
-
-                {/* Title & Description */}
-                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-smooth">
+              {/* Card Content */}
+              <div className="p-6 flex flex-col flex-grow">
+                {/* Title */}
+                <h3 className="text-xl font-bold text-foreground mb-4 text-right border-b-2 border-secondary pb-3">
                   {course.title}
                 </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+
+                {/* Description */}
+                <p className="text-muted-foreground text-sm leading-relaxed mb-6 text-right flex-grow">
                   {course.description}
                 </p>
 
-                {/* Features */}
-                <ul className="space-y-2 mb-6">
-                  {course.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <div className="w-1.5 h-1.5 rounded-full bg-secondary" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+                {/* Badges */}
+                <div className="flex items-center gap-2 mb-6 flex-wrap justify-end">
+                  <span className="inline-block bg-secondary/20 text-secondary px-3 py-1.5 rounded-full text-xs font-semibold border-2 border-secondary">
+                    الدخول للكورس
+                  </span>
+                  <span className="inline-block bg-cyan-100 text-cyan-600 px-3 py-1.5 rounded-full text-xs font-semibold">
+                    {course.subtitle}
+                  </span>
+                </div>
 
-                {/* Stats */}
-                <div className="flex items-center justify-between py-4 border-t border-border">
-                  <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                    <Clock className="w-4 h-4" />
+                {/* Course Info */}
+                <div className="space-y-2 mb-6 text-right">
+                  <div className="flex items-center justify-end gap-2 text-sm text-muted-foreground">
                     <span>{course.duration}</span>
+                    <Clock className="w-4 h-4 text-secondary" />
                   </div>
-                  <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                    <Users className="w-4 h-4" />
+                  <div className="flex items-center justify-end gap-2 text-sm text-muted-foreground">
                     <span>{course.students}</span>
-                  </div>
-                  <div className="flex items-center gap-1 text-sm">
-                    <Star className="w-4 h-4 text-secondary fill-secondary" />
-                    <span className="font-semibold text-foreground">{course.rating}</span>
+                    <Users className="w-4 h-4 text-secondary" />
                   </div>
                 </div>
 
                 {/* CTA Button */}
                 <Button
-                  variant={course.featured ? "gold" : "outline"}
-                  className="w-full mt-4 group/btn"
+                  className="w-full bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg font-semibold py-2.5"
                 >
-                  <span>سجل الآن</span>
-                  <ArrowLeft className="w-4 h-4 transition-transform group-hover/btn:-translate-x-1" />
+                  اشترك الآن!
                 </Button>
               </div>
             </div>
