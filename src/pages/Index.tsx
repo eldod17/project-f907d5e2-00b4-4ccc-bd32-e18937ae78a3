@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
+import TipsSection from "@/components/TipsSection";
 import CoursesSection from "@/components/CoursesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
@@ -29,10 +30,19 @@ const Index = () => {
           <AboutSection />
         </div>
         
-        {/* Decorative divider between About and Courses */}
+        {/* Decorative divider between About and Tips */}
         <div className="relative py-12">
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-6xl text-secondary/10 font-bold select-none animate-fade-in">﹡</div>
+          </div>
+        </div>
+
+        <TipsSection />
+        
+        {/* Decorative divider between Tips and Courses */}
+        <div className="relative py-8">
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-secondary to-transparent rounded-full"></div>
           </div>
         </div>
         
