@@ -110,82 +110,108 @@ const TipsSection = () => {
             </div>
 
             {/* Animated Student SVG */}
-            <div className="relative w-64 h-80">
+            <div className="relative w-72 h-96">
               <svg
-                viewBox="0 0 200 300"
+                viewBox="0 0 180 280"
                 className="w-full h-full"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                {/* Student Body - Line Art Style */}
+                {/* Student Body - Professional Line Art Style */}
                 <g 
                   stroke="hsl(var(--secondary))" 
-                  strokeWidth="2" 
+                  strokeWidth="1.5" 
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   style={{
-                    strokeDasharray: 1000,
-                    strokeDashoffset: strokeDashoffset,
+                    strokeDasharray: 2000,
+                    strokeDashoffset: strokeDashoffset * 2,
                     transition: 'stroke-dashoffset 0.02s linear'
                   }}
                 >
-                  {/* Head */}
-                  <circle cx="100" cy="50" r="25" />
+                  {/* Spiky Hair */}
+                  <path d="M70 35 Q65 20 75 15 Q80 25 85 12 Q90 22 95 10 Q100 20 105 8 Q110 18 115 15 Q120 25 125 20 Q130 35 125 40" />
+                  <path d="M68 38 Q60 30 70 25" />
+                  <path d="M125 38 Q130 30 122 28" />
                   
-                  {/* Hair */}
-                  <path d="M75 45 Q75 25 100 25 Q125 25 125 45" />
-                  <path d="M80 30 Q85 20 100 20 Q115 20 120 30" />
+                  {/* Head outline */}
+                  <path d="M70 40 Q65 55 70 70 Q80 85 95 85 Q110 85 120 70 Q125 55 120 40" />
                   
-                  {/* Face */}
-                  <circle cx="90" cy="48" r="3" /> {/* Left eye */}
-                  <circle cx="110" cy="48" r="3" /> {/* Right eye */}
-                  <path d="M95 60 Q100 65 105 60" /> {/* Smile */}
+                  {/* Left Ear */}
+                  <path d="M68 50 Q62 50 62 58 Q62 66 68 66" />
+                  
+                  {/* Right Ear */}
+                  <path d="M122 50 Q128 50 128 58 Q128 66 122 66" />
+                  
+                  {/* Face Details */}
+                  <ellipse cx="82" cy="52" rx="4" ry="5" /> {/* Left eye */}
+                  <ellipse cx="108" cy="52" rx="4" ry="5" /> {/* Right eye */}
+                  <circle cx="83" cy="51" r="1.5" /> {/* Left pupil */}
+                  <circle cx="109" cy="51" r="1.5" /> {/* Right pupil */}
+                  <path d="M92 58 Q95 60 98 58" /> {/* Nose */}
+                  <path d="M85 70 Q95 76 105 70" /> {/* Smile */}
                   
                   {/* Neck */}
-                  <line x1="100" y1="75" x2="100" y2="90" />
+                  <path d="M88 85 L88 95" />
+                  <path d="M102 85 L102 95" />
                   
-                  {/* Body/Shirt */}
-                  <path d="M70 95 L100 90 L130 95 L125 160 L75 160 Z" />
+                  {/* T-Shirt Body */}
+                  <path d="M60 100 Q70 95 95 95 Q120 95 130 100 L128 170 Q95 175 62 170 Z" />
                   
-                  {/* Collar */}
-                  <path d="M85 90 L100 105 L115 90" />
+                  {/* T-Shirt Collar (V-neck) */}
+                  <path d="M80 95 L95 110 L110 95" />
                   
-                  {/* Left Arm holding book */}
-                  <path d="M70 95 L50 130 L55 180" />
-                  <path d="M50 130 L45 135 L50 180 L60 180 L55 135" />
+                  {/* T-Shirt Sleeves */}
+                  <path d="M60 100 Q50 105 45 125 Q50 130 60 125 Q65 115 60 100" />
+                  <path d="M130 100 Q140 105 145 125 Q140 130 130 125 Q125 115 130 100" />
                   
-                  {/* Right Arm with backpack strap */}
-                  <path d="M130 95 L150 120 L145 140" />
+                  {/* Left Arm (holding book) */}
+                  <path d="M45 125 Q40 140 35 160 Q30 175 25 190" />
+                  <path d="M60 125 Q55 145 50 165 Q45 180 40 195" />
+                  
+                  {/* Hand holding book */}
+                  <path d="M25 190 Q20 195 22 200 Q25 205 30 200" />
+                  <path d="M40 195 Q35 200 38 205 Q42 210 45 205" />
+                  
+                  {/* Book/Notebook */}
+                  <rect x="15" y="195" width="40" height="55" rx="3" />
+                  <line x1="35" y1="195" x2="35" y2="250" /> {/* Book spine */}
+                  <line x1="20" y1="205" x2="32" y2="205" />
+                  <line x1="20" y1="215" x2="32" y2="215" />
+                  <line x1="20" y1="225" x2="30" y2="225" />
+                  <line x1="38" y1="205" x2="50" y2="205" />
+                  <line x1="38" y1="215" x2="50" y2="215" />
+                  
+                  {/* Right Arm (relaxed, holding strap) */}
+                  <path d="M145 125 Q150 145 148 165" />
+                  <path d="M130 125 Q135 150 132 170" />
+                  
+                  {/* Right Hand */}
+                  <path d="M148 165 Q152 170 150 175 Q147 178 145 175" />
                   
                   {/* Backpack */}
-                  <rect x="135" y="100" width="30" height="50" rx="5" />
-                  <line x1="140" y1="110" x2="160" y2="110" />
-                  <line x1="140" y1="120" x2="160" y2="120" />
+                  <path d="M125 105 Q155 110 160 140 Q162 180 155 210 Q150 220 140 220 L138 170" />
+                  <path d="M140 110 L145 110 Q155 115 158 135" /> {/* Strap */}
+                  <path d="M145 175 Q155 175 158 180 Q160 190 155 195 Q150 198 145 195" /> {/* Pocket */}
+                  <line x1="148" y1="182" x2="155" y2="182" />
                   
-                  {/* Book in hand */}
-                  <rect x="40" y="150" width="30" height="40" rx="2" />
-                  <line x1="45" y1="160" x2="65" y2="160" />
-                  <line x1="45" y1="170" x2="65" y2="170" />
-                  <line x1="45" y1="180" x2="60" y2="180" />
+                  {/* Backpack top handle */}
+                  <path d="M140 105 Q145 95 150 105" />
                   
-                  {/* Pants */}
-                  <path d="M75 160 L70 240" />
-                  <path d="M125 160 L130 240" />
-                  <path d="M100 160 L100 200" />
-                  <path d="M75 160 L100 165 L125 160" />
+                  {/* Pants/Shorts */}
+                  <path d="M62 170 L58 220 Q60 225 70 225 L80 180" />
+                  <path d="M128 170 L132 220 Q130 225 120 225 L110 180" />
+                  <path d="M80 180 Q95 185 110 180" />
+                  
+                  {/* Legs */}
+                  <path d="M65 225 L60 265" />
+                  <path d="M75 225 L72 265" />
+                  <path d="M115 225 L118 265" />
+                  <path d="M125 225 L130 265" />
                   
                   {/* Shoes */}
-                  <ellipse cx="65" cy="245" rx="12" ry="8" />
-                  <ellipse cx="135" cy="245" rx="12" ry="8" />
-                  
-                  {/* Arabic letter floating - ع */}
-                  <text x="160" y="70" fontSize="20" fill="none" stroke="hsl(var(--secondary))" strokeWidth="1">ع</text>
-                  
-                  {/* Arabic letter floating - ب */}
-                  <text x="40" y="100" fontSize="16" fill="none" stroke="hsl(var(--secondary))" strokeWidth="1">ب</text>
-                  
-                  {/* Arabic letter floating - ن */}
-                  <text x="170" y="150" fontSize="18" fill="none" stroke="hsl(var(--secondary))" strokeWidth="1">ن</text>
+                  <path d="M55 265 Q50 268 48 275 Q52 280 65 278 Q75 275 75 270 Q72 265 65 265" />
+                  <path d="M115 265 Q110 268 108 275 Q112 280 125 278 Q135 275 135 270 Q132 265 125 265" />
                 </g>
               </svg>
               
