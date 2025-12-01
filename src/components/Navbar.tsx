@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
@@ -56,15 +57,16 @@ const Navbar = () => {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-4">
-            <button className="text-foreground font-medium hover:text-secondary transition-smooth">
+            <Link to="/login" className="text-foreground font-medium hover:text-secondary transition-smooth">
               تسجيل الدخول
-            </button>
+            </Link>
             <Button 
               variant="outline" 
               size="default"
               className="border-2 border-secondary text-secondary hover:bg-secondary hover:text-white rounded-lg px-6"
+              asChild
             >
-              إنشاء حساب
+              <Link to="/signup">إنشاء حساب</Link>
             </Button>
           </div>
 
@@ -92,14 +94,19 @@ const Navbar = () => {
               </a>
             ))}
             <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-secondary/20">
-              <button className="text-foreground font-medium hover:text-secondary transition-smooth py-2">
+              <Link 
+                to="/login" 
+                className="text-foreground font-medium hover:text-secondary transition-smooth py-2 text-center"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
                 تسجيل الدخول
-              </button>
+              </Link>
               <Button 
                 variant="outline" 
                 className="border-2 border-secondary text-secondary hover:bg-secondary hover:text-white rounded-lg w-full"
+                asChild
               >
-                إنشاء حساب
+                <Link to="/signup" onClick={() => setIsMobileMenuOpen(false)}>إنشاء حساب</Link>
               </Button>
             </div>
           </div>
