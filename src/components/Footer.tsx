@@ -70,7 +70,7 @@ const Footer = () => {
             <h4 className="text-lg font-bold mb-6">تواصل معنا</h4>
             <ul className="space-y-3 text-primary-foreground/70">
               <li>info@arabic-teacher.com</li>
-              <li>+٩٦٦ ٥٠ ١٢٣ ٤٥٦٧</li>
+              <li>+966 50 123 4567</li>
               <li>المملكة العربية السعودية</li>
             </ul>
           </div>

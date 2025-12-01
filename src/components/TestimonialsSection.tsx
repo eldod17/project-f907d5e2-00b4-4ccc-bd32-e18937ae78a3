@@ -142,10 +142,10 @@ const TestimonialsSection = () => {
         {/* Trust Indicators */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
           {[
-            { value: "+٥٠٠", label: "طالب راضٍ" },
-            { value: "٤.٩/٥", label: "متوسط التقييم" },
-            { value: "٩٨%", label: "نسبة النجاح" },
-            { value: "+١٠٠٠", label: "تقييم إيجابي" },
+            { value: "+500", label: "طالب راضٍ" },
+            { value: "4.9/5", label: "متوسط التقييم" },
+            { value: "98%", label: "نسبة النجاح" },
+            { value: "+1000", label: "تقييم إيجابي" },
           ].map((stat, index) => (
             <div
               key={stat.label}

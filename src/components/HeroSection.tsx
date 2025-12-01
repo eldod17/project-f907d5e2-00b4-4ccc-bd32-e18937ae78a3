@@ -12,15 +12,15 @@ const HeroSection = () => {
       <div className="absolute inset-0 pattern-arabic opacity-30" />
       
       {/* Floating Elements */}
-      <div className="absolute top-32 left-20 w-20 h-20 rounded-full bg-secondary/20 animate-float blur-xl" />
-      <div className="absolute bottom-40 right-20 w-32 h-32 rounded-full bg-secondary/10 animate-float delay-300 blur-2xl" />
+      <div className="absolute top-32 left-10 w-20 h-20 rounded-full bg-secondary/20 animate-float blur-xl hidden md:block" />
+      <div className="absolute bottom-40 right-10 w-32 h-32 rounded-full bg-secondary/10 animate-float delay-300 blur-2xl hidden md:block" />
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-10 max-w-7xl">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content - Left Side */}
           <div className="text-center lg:text-right space-y-6 order-1 lg:order-1 animate-fade-up">
             {/* Arabic Calligraphy Style Title */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
               <span className="text-gradient-gold">الفارس</span>
               <br />
               <span className="text-foreground">في اللغة العربية</span>
@@ -38,6 +38,23 @@ const HeroSection = () => {
               </p>
             </div>
 
+            {/* Marketing Message */}
+            <div className="mt-6 p-6 bg-card/80 backdrop-blur-sm rounded-2xl border border-secondary/20 shadow-gold animate-fade-up delay-200">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-gold flex items-center justify-center text-primary-foreground font-bold text-xl">
+                  "
+                </div>
+                <div>
+                  <p className="text-foreground italic leading-relaxed mb-3">
+                    اللغة العربية ليست مجرد مادة دراسية، بل هي هويتنا وتراثنا وجسر التواصل مع ماضينا العريق. أؤمن بأن كل طالب لديه القدرة على الإبداع في اللغة العربية، ودوري هو إيقاظ هذه القدرة وتوجيهها نحو التميز والإبداع.
+                  </p>
+                  <p className="text-secondary font-bold text-lg">
+                    مستر حسن
+                  </p>
+                </div>
+              </div>
+            </div>
+
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4 animate-fade-up delay-200">
               <Button variant="hero" size="lg" className="group">
@@ -51,7 +68,7 @@ const HeroSection = () => {
           </div>
 
           {/* Teacher Image - Right Side */}
-          <div className="relative flex justify-center lg:justify-end order-2 lg:order-2 animate-scale-in delay-200">
+          <div className="relative flex justify-center lg:justify-end order-2 lg:order-2 animate-scale-in delay-300">
             <div className="relative">
               {/* Decorative Circle Background */}
               <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-secondary/30 to-secondary/10 rounded-full blur-3xl" />
@@ -70,9 +87,9 @@ const HeroSection = () => {
               </div>
 
               {/* Decorative Arabic Letters - Animated */}
-              <div className="absolute -top-12 -left-12 text-8xl text-secondary/30 font-bold animate-bounce" style={{ animationDelay: '0s' }}>ع</div>
-              <div className="absolute -bottom-12 -right-12 text-8xl text-secondary/30 font-bold animate-bounce" style={{ animationDelay: '0.2s' }}>ب</div>
-              <div className="absolute top-1/2 -left-24 text-7xl text-secondary/20 font-bold animate-bounce" style={{ animationDelay: '0.4s' }}>ي</div>
+              <div className="absolute -top-6 -left-6 text-6xl text-secondary/30 font-bold animate-bounce hidden md:block" style={{ animationDelay: '0s' }}>ع</div>
+              <div className="absolute -bottom-6 -right-6 text-6xl text-secondary/30 font-bold animate-bounce hidden md:block" style={{ animationDelay: '0.2s' }}>ب</div>
+              <div className="absolute top-1/2 -left-12 text-5xl text-secondary/20 font-bold animate-bounce hidden md:block" style={{ animationDelay: '0.4s' }}>ي</div>
             </div>
           </div>
         </div>

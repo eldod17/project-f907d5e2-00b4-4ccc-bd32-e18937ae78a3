@@ -50,13 +50,13 @@ const AboutSection = () => {
           {features.map((feature, index) => (
             <div
               key={feature.title}
-              className={`group bg-card p-8 rounded-2xl shadow-card hover:shadow-hover transition-smooth cursor-pointer animate-fade-up`}
+              className={`group bg-card p-8 rounded-2xl shadow-card hover:shadow-hover transition-all duration-500 cursor-pointer animate-fade-up transform hover:-translate-y-2 hover:scale-105`}
               style={{ animationDelay: `${(index + 3) * 100}ms` }}
             >
-              <div className="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary/20 transition-smooth group-hover:scale-110">
-                <feature.icon className="w-8 h-8 text-secondary" />
+              <div className="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary/20 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
+                <feature.icon className="w-8 h-8 text-secondary group-hover:text-primary transition-colors duration-300" />
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-smooth">
+              <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
                 {feature.title}
               </h3>
               <p className="text-muted-foreground leading-relaxed">
@@ -67,7 +67,7 @@ const AboutSection = () => {
         </div>
 
         {/* About Content */}
-        <div className="mt-20 bg-card rounded-3xl p-8 md:p-12 shadow-card">
+        <div className="mt-20 bg-card rounded-3xl p-8 md:p-12 shadow-card hover:shadow-hover transition-all duration-500 transform hover:-translate-y-1">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h3 className="text-2xl md:text-3xl font-bold text-foreground">
@@ -86,32 +86,35 @@ const AboutSection = () => {
               
               {/* Stats Bar */}
               <div className="flex flex-wrap gap-8 pt-6">
-                <div>
-                  <div className="text-3xl font-bold text-primary">+١٠</div>
-                  <div className="text-muted-foreground">سنوات خبرة</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-primary">+٥٠٠</div>
-                  <div className="text-muted-foreground">طالب تخرج</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-primary">٩٨%</div>
-                  <div className="text-muted-foreground">نسبة الرضا</div>
-                </div>
+                {[
+                  { value: "+10", label: "سنوات خبرة" },
+                  { value: "+500", label: "طالب تخرج" },
+                  { value: "98%", label: "نسبة الرضا" },
+                ].map((stat, index) => (
+                  <div 
+                    key={stat.label}
+                    className="transform hover:scale-110 transition-transform duration-300"
+                  >
+                    <div className="text-3xl font-bold text-primary animate-count-up">
+                      {stat.value}
+                    </div>
+                    <div className="text-muted-foreground">{stat.label}</div>
+                  </div>
+                ))}
               </div>
             </div>
 
             {/* Decorative Arabic Calligraphy */}
             <div className="relative flex items-center justify-center">
-              <div className="text-[120px] md:text-[180px] font-bold text-primary/5 select-none">
+              <div className="text-[120px] md:text-[180px] font-bold text-primary/5 select-none animate-pulse-slow">
                 ع
               </div>
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center">
-                  <div className="text-6xl md:text-8xl font-bold text-secondary/20">
+                  <div className="text-6xl md:text-8xl font-bold text-secondary/20 animate-float">
                     العربية
                   </div>
-                  <div className="text-2xl text-muted-foreground/50 mt-4">
+                  <div className="text-2xl text-muted-foreground/50 mt-4 animate-fade-in">
                     لغة الضاد
                   </div>
                 </div>

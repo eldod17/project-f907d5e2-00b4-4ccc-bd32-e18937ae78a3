@@ -52,25 +52,25 @@ const ContactSection = () => {
     {
       icon: Phone,
       title: "اتصل بنا",
-      value: "+٩٦٦ ٥٠ ١٢٣ ٤٥٦٧",
-      description: "متاح ٢٤/٧",
+      value: "+966 50 123 4567",
+      description: "متاح 24/7",
     },
     {
       icon: Mail,
       title: "البريد الإلكتروني",
       value: "info@arabic-teacher.com",
-      description: "رد خلال ٢٤ ساعة",
+      description: "رد خلال 24 ساعة",
     },
     {
       icon: MessageCircle,
       title: "واتساب",
-      value: "+٩٦٦ ٥٠ ١٢٣ ٤٥٦٧",
+      value: "+966 50 123 4567",
       description: "تواصل فوري",
     },
     {
       icon: Clock,
       title: "ساعات العمل",
-      value: "٨ ص - ١٠ م",
+      value: "8 AM - 10 PM",
       description: "السبت - الخميس",
     },
   ];
@@ -124,7 +124,7 @@ const ContactSection = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="٠٥X XXX XXXX"
+                    placeholder="05X XXX XXXX"
                     required
                     className="bg-background border-border focus:border-secondary transition-smooth"
                   />
@@ -185,7 +185,7 @@ const ContactSection = () => {
             {/* Benefits */}
             <div className="mt-8 pt-8 border-t border-border">
               <div className="grid grid-cols-2 gap-4">
-                {["رد سريع خلال ٢٤ ساعة", "استشارة مجانية", "دعم فني مستمر", "خصومات حصرية"].map(
+                {["رد سريع خلال 24 ساعة", "استشارة مجانية", "دعم فني مستمر", "خصومات حصرية"].map(
                   (benefit) => (
                     <div key={benefit} className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-secondary" />
