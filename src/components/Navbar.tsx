@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,7 +34,7 @@ const Navbar = () => {
         }`}>
           {/* Logo */}
           <a href="#home" className="flex items-center gap-3 group">
-            <span className="text-3xl font-bold text-secondary group-hover:scale-110 transition-transform">🐎</span>
+            <span className="text-3xl font-bold text-secondary group-hover:scale-110 transition-transform"></span>
             <span className="text-2xl font-bold text-foreground group-hover:text-secondary transition-smooth">منصة الفارس</span>
           </a>
 

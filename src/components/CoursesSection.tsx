@@ -1,57 +1,38 @@
 import { Button } from "@/components/ui/button";
-import { Clock, Users, Star, ArrowLeft, BookOpen, Pen, MessageSquare, FileText } from "lucide-react";
+import { Clock } from "lucide-react";
 import courseImage from "@/assets/course.png";
 
 const CoursesSection = () => {
   const courses = [
     {
-      icon: BookOpen,
+      id: 240,
       title: "أساسيات اللغة العربية",
-      subtitle: "كورس مجاني!",
-      level: "مبتدئ",
-      levelColor: "bg-green-100 text-green-700",
-      description: "تعلم القراءة والكتابة وأساسيات النحو والصرف للمبتدئين",
-      duration: "12 weeks",
-      students: "150",
-      rating: "4.9",
-      features: ["الحروف والحركات", "قواعد الإملاء", "القراءة الأساسية"],
+      subtitle: "تعلم القراءة والكتابة وأساسيات النحو والصرف للمبتدئين",
+      image: courseImage,
+      price: "50.00",
+      date: "الجمعة، ٢٨ نوفمبر ٢٠٢٥",
+      time: "03:00 مساءً",
+      accentColor: "teal",
     },
     {
-      icon: Pen,
+      id: 241,
       title: "النحو والصرف المتقدم",
-      subtitle: "كورس مجاني!",
-      level: "متقدم",
-      levelColor: "bg-blue-100 text-blue-700",
-      description: "إتقان قواعد النحو والصرف مع تمارين تطبيقية متنوعة",
-      duration: "16 weeks",
-      students: "80",
-      rating: "4.8",
-      features: ["الإعراب الكامل", "تصريف الأفعال", "البلاغة العربية"],
-      featured: true,
+      subtitle: "إتقان قواعد النحو والصرف مع تمارين تطبيقية متنوعة",
+      image: courseImage,
+      price: "75.00",
+      date: "الخميس، ٢٧ نوفمبر ٢٠٢٥",
+      time: "04:00 مساءً",
+      accentColor: "sky",
     },
     {
-      icon: MessageSquare,
+      id: 242,
       title: "المحادثة والتواصل",
-      subtitle: "كورس مجاني!",
-      level: "متوسط",
-      levelColor: "bg-yellow-100 text-yellow-700",
-      description: "تطوير مهارات المحادثة والتعبير الشفهي بطلاقة",
-      duration: "8 weeks",
-      students: "200",
-      rating: "4.9",
-      features: ["حوارات يومية", "العرض والتقديم", "النقاش والحوار"],
-    },
-    {
-      icon: FileText,
-      title: "الكتابة الإبداعية",
-      subtitle: "كورس مجاني!",
-      level: "متقدم",
-      levelColor: "bg-purple-100 text-purple-700",
-      description: "فن كتابة المقالات والقصص والشعر بأسلوب أدبي راقي",
-      duration: "10 weeks",
-      students: "60",
-      rating: "5.0",
-      features: ["كتابة المقال", "القصة القصيرة", "الشعر والنثر"],
+      subtitle: "تطوير مهارات المحادثة والتعبير الشفهي بطلاقة",
+      image: courseImage,
+      price: "60.00",
+      date: "الأربعاء، ٢٦ نوفمبر ٢٠٢٥",
+      time: "05:00 مساءً",
+      accentColor: "teal",
     },
   ];
 
@@ -77,64 +58,102 @@ const CoursesSection = () => {
 
         {/* Courses Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {courses.map((course, index) => (
-            <div
-              key={course.title}
-              className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-smooth animate-fade-up flex flex-col"
-              style={{ animationDelay: `${(index + 3) * 100}ms` }}
-            >
-              {/* Course Image - Top */}
-              <div className="relative h-64 overflow-hidden bg-gradient-to-br from-secondary to-primary">
-                <img
-                  src={courseImage}
-                  alt={course.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
+          {courses.map((course, index) => {
+            const accentClasses = {
+              teal: {
+                border: "border-teal-400 dark:border-teal-600",
+                accent: "bg-teal-500",
+                hover: "hover:bg-teal-500",
+                button: "from-teal-500 to-sky-500",
+              },
+              sky: {
+                border: "border-sky-400 dark:border-sky-600",
+                accent: "bg-sky-500",
+                hover: "hover:bg-sky-500",
+                button: "from-sky-500 to-cyan-500",
+              },
+            };
+            const colors = accentClasses[course.accentColor] || accentClasses.teal;
 
-              {/* Card Content */}
-              <div className="p-6 flex flex-col flex-grow">
-                {/* Title */}
-                <h3 className="text-xl font-bold text-foreground mb-4 text-right border-b-2 border-secondary pb-3">
-                  {course.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-muted-foreground text-sm leading-relaxed mb-6 text-right flex-grow">
-                  {course.description}
-                </p>
-
-                {/* Badges */}
-                <div className="flex items-center gap-2 mb-6 flex-wrap justify-end">
-                  <span className="inline-block bg-secondary/20 text-secondary px-3 py-1.5 rounded-full text-xs font-semibold border-2 border-secondary">
-                    الدخول للكورس
-                  </span>
-                  <span className="inline-block bg-cyan-100 text-cyan-600 px-3 py-1.5 rounded-full text-xs font-semibold">
-                    {course.subtitle}
-                  </span>
+            return (
+              <div key={course.id} className="group">
+                <div className="rounded-md overflow-hidden w-full">
+                  <img
+                    src={course.image}
+                    alt="course"
+                    className="w-full transform text-center group-hover:scale-110 group-hover:brightness-110 group-hover:saturate-150 transition-all duration-300"
+                  />
                 </div>
+                <div className={`px-5 -mt-10 relative z-10`}>
+                  <div className={`rounded-md w-full bg-slate-50 dark:bg-slate-900 text-foreground px-4 py-6 shadow-lg hover:shadow-xl group-hover:shadow-lg transition-all duration-300 border ${colors.border}`}>
+                    <div className="flex flex-col space-y-6">
+                      {/* Header Section */}
+                      <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 sm:space-x-reverse">
+                        <div className="flex flex-col space-y-4 w-full">
+                          <div className="font-bold text-lg text-right pr-3">
+                            {course.title}
+                          </div>
+                          <div className={`h-1 rounded-lg transition-all duration-300 ${colors.accent} w-12`} />
+                          <div className="text-muted-foreground text-sm text-right">
+                            <span>{course.subtitle}</span>
+                          </div>
+                        </div>
+                        <div className="flex flex-col space-y-3 shrink-0">
+                          <a
+                            href={`/course/${course.id}`}
+                            className={`border-2 ${colors.accent} rounded-full px-3 py-1 ${colors.hover} text-white transition-all duration-300 text-sm font-semibold text-center`}
+                          >
+                            الدخول للكورس
+                          </a>
+                          <a
+                            href={`/course/${course.id}/subscribe/previous_invoices/`}
+                            className={`bg-gradient-to-r ${colors.button} text-white rounded-full px-3 py-1 flex justify-center items-center text-sm font-semibold`}
+                          >
+                            اشترك الآن !
+                          </a>
+                        </div>
+                      </div>
 
-                {/* Course Info */}
-                <div className="space-y-2 mb-6 text-right">
-                  <div className="flex items-center justify-end gap-2 text-sm text-muted-foreground">
-                    <span>{course.duration}</span>
-                    <Clock className="w-4 h-4 text-secondary" />
-                  </div>
-                  <div className="flex items-center justify-end gap-2 text-sm text-muted-foreground">
-                    <span>{course.students}</span>
-                    <Users className="w-4 h-4 text-secondary" />
+                      {/* Divider */}
+                      <div className="flex-col flex space-y-3">
+                        <div className="px-10">
+                          <div className="h-px bg-slate-300 dark:bg-slate-700 transition-all duration-300" />
+                        </div>
+
+                        {/* Footer Section with Price and Date */}
+                        <div className="w-full font-semibold text-sm flex flex-col-reverse sm:flex-row space-y-4 space-y-reverse sm:space-y-0 sm:space-x-reverse sm:space-x-4 justify-between items-start sm:items-center">
+                          <div>
+                            <div className={`${colors.accent} text-slate-100 rounded-lg py-1 px-3 space-x-2 space-x-reverse`}>
+                              <span className="bg-slate-200 dark:bg-slate-800 text-foreground px-2 py-px rounded-md transition-all duration-300">
+                                {course.price}
+                              </span>
+                              <span>جنيهًا</span>
+                            </div>
+                          </div>
+                          <div className="flex sm:justify-end sm:items-start flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-1 items-start sm:space-x-reverse text-muted-foreground text-xs flex-wrap">
+                            <div className="flex flex-col space-y-2 shrink-0">
+                              <div className="flex justify-between space-x-1 space-x-reverse">
+                                <span className="flex items-center">{course.date}</span>
+                                <span className="font-normal flex items-center ml-1">
+                                  <Clock className="w-4 h-4" />
+                                </span>
+                              </div>
+                              <div className="flex justify-between space-x-1 space-x-reverse">
+                                <span className="flex items-center">{course.time}</span>
+                                <span className="font-normal flex items-center ml-1">
+                                  <Clock className="w-4 h-4" />
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-
-                {/* CTA Button */}
-                <Button
-                  className="w-full bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg font-semibold py-2.5"
-                >
-                  اشترك الآن!
-                </Button>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* View All Button */}
